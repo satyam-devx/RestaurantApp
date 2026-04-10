@@ -97,16 +97,8 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home>{
                   );
                 },
               ).toList(),
-              autoPlay: true,
-//                enlargeCenterPage: true,
-              viewportFraction: 1.0,
-//              aspectRatio: 2.0,
-              onPageChanged: (index) {
-                setState(() {
-                  _current = index;
-                });
-              },
             ),
+            
             SizedBox(height: 20.0),
 
             Text(
