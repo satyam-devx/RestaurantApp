@@ -164,7 +164,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 );
               },
-              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
 
