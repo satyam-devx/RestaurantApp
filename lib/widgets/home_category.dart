@@ -6,7 +6,7 @@ class HomeCategory extends StatefulWidget {
   final IconData icon;
   final String title;
   final String items;
-  final Function tap;
+  final void Function()? tap;
   final bool isHome;
 
   HomeCategory({
@@ -25,7 +25,7 @@ class _HomeCategoryState extends State<HomeCategory> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: widget.isHome?(){
+      onTap: widget.isHome ? () {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (BuildContext context){
