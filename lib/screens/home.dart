@@ -74,7 +74,16 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home>{
             //Slider Here
 
             CarouselSlider(
-              options: CarouselOptions(height: MediaQuery.of(context).size.height/2.4),
+             options: CarouselOptions(
+              height: MediaQuery.of(context).size.height/2.4,
+              autoPlay: true, // ✅ FIX (moved here)
+              viewportFraction: 1.0,
+              onPageChanged: (index, reason) { // ✅ FIX new signature
+               setState(() {
+                _current = index;
+                });
+               },
+              ),
               items: map<Widget>(
                 foods,
                     (index, i){
