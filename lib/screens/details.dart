@@ -254,6 +254,9 @@ class _ProductDetailsState extends State<ProductDetails> {
       bottomNavigationBar: Container(
         height: 50.0,
         child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+      backgroundColor: Theme.of(context).colorScheme.secondary, // ✅ FIX
+          ),
           child: Text(
             "ADD TO CART",
             style: TextStyle(
