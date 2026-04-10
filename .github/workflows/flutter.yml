@@ -18,27 +18,29 @@ jobs:
         with:
           flutter-version: '3.22.0'
 
-      - name: Clean Cache and Force Refresh
+      # 🔥 IMPORTANT: recreate missing android files (gradlew fix)
+      - name: Recreate missing files
+        run: flutter create .
+
+      # 🔥 Clean everything
+      - name: Clean project
         run: |
           rm -f pubspec.lock
-          flutter pub cache clean -f   # Ye line zaroori hai purani cache delete karne ke liye
           flutter clean
 
+      # 🔥 Get dependencies
       - name: Install dependencies
         run: flutter pub get
 
+      # 🔥 Make gradlew executable (safe)
+      - name: Fix gradlew permission
+        run: chmod +x android/gradlew
 
+      # 🚀 Build APK
       - name: Build APK
-        run: |
-          flutter pub get
-          cd android
-          # Gradlew ko executable banane ke liye
-          chmod +x gradlew
-          ./gradlew clean
-          cd ..
-          flutter build apk --release --no-tree-shake-icons
+        run: flutter build apk --release
 
-
+      # 📦 Upload APK
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
