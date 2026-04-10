@@ -237,7 +237,9 @@ class _CheckoutState extends State<Checkout> {
                     width: 150.0,
                     height: 50.0,
                     child: TextButton(
-                      color: Theme.of(context).colorScheme.secondary,
+                      style: TextButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.secondary, // ✅ FIX
+                      ),
                       child: Text(
                         "Place Order".toUpperCase(),
                         style: TextStyle(
