@@ -18,21 +18,21 @@ jobs:
         with:
           flutter-version: '3.22.0'
 
-      # 🔥 IMPORTANT: recreate missing android files (gradlew fix)
-      - name: Recreate missing files
-        run: flutter create .
+      # 🔥 Recreate Android folder (VERY IMPORTANT)
+      - name: Recreate Android files
+        run: flutter create . --project-name restaurant_ui_kit
 
-      # 🔥 Clean everything
+      # 🔥 Clean project
       - name: Clean project
         run: |
           rm -f pubspec.lock
           flutter clean
 
-      # 🔥 Get dependencies
+      # 🔥 Install dependencies
       - name: Install dependencies
         run: flutter pub get
 
-      # 🔥 Make gradlew executable (safe)
+      # 🔥 Fix gradlew permission
       - name: Fix gradlew permission
         run: chmod +x android/gradlew
 
@@ -46,3 +46,10 @@ jobs:
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      # 🔥 NEW: Upload Android folder (IMPORTANT)
+      - name: Upload Android Folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-folder
+          path: android
