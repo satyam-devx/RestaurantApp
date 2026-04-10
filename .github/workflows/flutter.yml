@@ -18,20 +18,25 @@ jobs:
         with:
           flutter-version: '3.22.0'
 
+      # 🔥 Clean project
       - name: Clean project
         run: |
           rm -f pubspec.lock
           flutter clean
 
+      # 🔥 Install dependencies
       - name: Install dependencies
         run: flutter pub get
 
+      # 🔥 Fix gradlew permission
       - name: Fix gradlew permission
         run: chmod +x android/gradlew
 
+      # 🚀 Build APK
       - name: Build APK
         run: flutter build apk --release
 
+      # 📦 Upload APK
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
