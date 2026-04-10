@@ -1,34 +1,29 @@
 import 'package:flutter/material.dart';
-class Constants{
 
+class Constants {
   static String appName = "Restaurant App UI KIT";
 
-  //Colors for theme
-//  Color(0xfffcfcff);
+  // Colors for theme
   static Color lightPrimary = Color(0xfffcfcff);
   static Color darkPrimary = Colors.black;
   static Color lightAccent = Colors.red;
-  static Color darkAccent = Colors.red[400];
+  static Color darkAccent = Colors.red.shade400;
   static Color lightBG = Color(0xfffcfcff);
   static Color darkBG = Colors.black;
-  static Color ratingBG = Colors.yellow[600];
+  static Color ratingBG = Colors.yellow.shade600;
 
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: lightBG,
     primaryColor: lightPrimary,
-    cursorColor: lightAccent,
-    scaffoldBackgroundColor: lightBG,
+    colorScheme: ColorScheme.light(
+      secondary: lightAccent,
+    ),
     appBarTheme: AppBarTheme(
-      titleTextStyle: TextTheme(
-        headline6: TextStyle(
-          color: darkBG,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w800,
-        ),
+      titleTextStyle: TextStyle(
+        color: darkBG,
+        fontSize: 18.0,
+        fontWeight: FontWeight.w800,
       ),
-//      iconTheme: IconThemeData(
-//        color: lightAccent,
-//      ),
     ),
   );
 
@@ -36,21 +31,15 @@ class Constants{
     brightness: Brightness.dark,
     scaffoldBackgroundColor: darkBG,
     primaryColor: darkPrimary,
-    scaffoldBackgroundColor: darkBG,
-    cursorColor: darkAccent,
+    colorScheme: ColorScheme.dark(
+      secondary: darkAccent,
+    ),
     appBarTheme: AppBarTheme(
-      titleTextStyle: TextTheme(
-        headline6: TextStyle(
-          color: lightBG,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w800,
-        ),
+      titleTextStyle: TextStyle(
+        color: lightBG,
+        fontSize: 18.0,
+        fontWeight: FontWeight.w800,
       ),
-//      iconTheme: IconThemeData(
-//        color: darkAccent,
-//      ),
     ),
   );
-
-
 }
