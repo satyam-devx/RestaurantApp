@@ -11,7 +11,7 @@ class AppProvider extends ChangeNotifier{
 
 
   ThemeData theme = Constants.lightTheme;
-  Key key = UniqueKey();
+  Key? key = UniqueKey();
   GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   void setKey(value) {
@@ -28,7 +28,7 @@ class AppProvider extends ChangeNotifier{
     theme = value;
     SharedPreferences.getInstance().then((prefs){
       prefs.setString("theme", c).then((val){
-        SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
           statusBarColor: c == "dark" ? Constants.darkPrimary : Constants.lightPrimary,
           statusBarIconBrightness: c == "dark" ? Brightness.light:Brightness.dark,

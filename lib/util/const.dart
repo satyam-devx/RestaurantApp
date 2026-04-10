@@ -14,14 +14,14 @@ class Constants{
   static Color ratingBG = Colors.yellow[600];
 
   static ThemeData lightTheme = ThemeData(
-    backgroundColor: lightBG,
+    scaffoldBackgroundColor: lightBG,
     primaryColor: lightPrimary,
     accentColor:  lightAccent,
     cursorColor: lightAccent,
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
-        title: TextStyle(
+      titleTextStyle: TextTheme(
+        titleTextStyle: TextStyle(
           color: darkBG,
           fontSize: 18.0,
           fontWeight: FontWeight.w800,
@@ -35,14 +35,14 @@ class Constants{
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    backgroundColor: darkBG,
+    scaffoldBackgroundColor: darkBG,
     primaryColor: darkPrimary,
     accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
     cursorColor: darkAccent,
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
-        title: TextStyle(
+      titleTextStyle: TextTheme(
+        titleTextStyle: TextStyle(
           color: lightBG,
           fontSize: 18.0,
           fontWeight: FontWeight.w800,

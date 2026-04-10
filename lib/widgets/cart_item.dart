@@ -13,12 +13,12 @@ class CartItem extends StatelessWidget {
 
 
   CartItem({
-    Key key,
-    @required this.name,
-    @required this.img,
-    @required this.isFav,
-    @required this.rating,
-    @required this.raters})
+    Key? key,
+    required this.name,
+    required this.img,
+    required this.isFav,
+    required this.rating,
+    required this.raters})
       :super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class CartItem extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14.0,
                         fontWeight: FontWeight.w900,
-                        color: Theme.of(context).colorScheme.secondary,
+                        style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.secondary),
                       ),
                     ),
 

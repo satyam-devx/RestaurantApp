@@ -79,7 +79,7 @@ class _MainScreenState extends State<MainScreen> {
                     ? Theme.of(context).colorScheme.secondary
                     : Theme
                     .of(context)
-                    .textTheme.caption.color,
+                    .textTheme.bodySmall.color,
                 onPressed: ()=>_pageController.jumpToPage(0),
               ),
 
@@ -92,7 +92,7 @@ class _MainScreenState extends State<MainScreen> {
                     ? Theme.of(context).colorScheme.secondary
                     : Theme
                     .of(context)
-                    .textTheme.caption.color,
+                    .textTheme.bodySmall.color,
                 onPressed: ()=>_pageController.jumpToPage(1),
               ),
 
@@ -106,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
                     ? Theme.of(context).colorScheme.secondary
                     : Theme
                     .of(context)
-                    .textTheme.caption.color,
+                    .textTheme.bodySmall.color,
                 onPressed: ()=>_pageController.jumpToPage(2),
               ),
 
@@ -119,7 +119,7 @@ class _MainScreenState extends State<MainScreen> {
                     ? Theme.of(context).colorScheme.secondary
                     : Theme
                     .of(context)
-                    .textTheme.caption.color,
+                    .textTheme.bodySmall.color,
                 onPressed: ()=>_pageController.jumpToPage(3),
               ),
 
@@ -132,7 +132,7 @@ class _MainScreenState extends State<MainScreen> {
                     ? Theme.of(context).colorScheme.secondary
                     : Theme
                     .of(context)
-                    .textTheme.caption.color,
+                    .textTheme.bodySmall.color,
                 onPressed: ()=>_pageController.jumpToPage(4),
               ),
 

@@ -13,12 +13,12 @@ class SliderItem extends StatelessWidget {
 
 
   SliderItem({
-    Key key,
-    @required this.name,
-    @required this.img,
-    @required this.isFav,
-    @required this.rating,
-    @required this.raters})
+    Key? key,
+    required this.name,
+    required this.img,
+    required this.isFav,
+    required this.rating,
+    required this.raters})
       :super(key: key);
 
   @override

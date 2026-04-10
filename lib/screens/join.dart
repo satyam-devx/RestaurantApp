@@ -19,7 +19,7 @@ class _JoinAppState extends State<JoinApp> with SingleTickerProviderStateMixin{
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, initialIndex: 1, length: 2);
-    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   }
 
 

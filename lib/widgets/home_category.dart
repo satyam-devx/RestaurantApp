@@ -10,10 +10,10 @@ class HomeCategory extends StatefulWidget {
   final bool isHome;
 
   HomeCategory({
-    Key key,
-    @required this.icon,
-    @required this.title,
-    @required this.items,
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.items,
     this.tap, this.isHome})
       : super(key: key);
 
@@ -45,7 +45,7 @@ class _HomeCategoryState extends State<HomeCategory> {
                 padding: EdgeInsets.only(left: 0.0, right: 10.0),
                 child: Icon(
                   widget.icon,
-                  color: Theme.of(context).colorScheme.secondary,
+                  style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.secondary),
                 ),
               ),
               SizedBox(width: 5),
